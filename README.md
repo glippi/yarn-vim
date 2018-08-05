@@ -8,12 +8,12 @@ A simple utility, that wraps the main functionality of Yarn package manager.
   * if you want to *add* a package simply run ```_:Y**a** {package}_```, if you want to remove something simply call _Y**r** {package}_, etc. it's simple: just _Y_ followed by the first letter of the command you want to execute
 
 ## Installation
-* [**Vundle**(]https://github.com/gmarik/vundle), add the following line to your `~/.vimrc`:
+* [**Vundle**](https://github.com/gmarik/vundle), add the following line to your `~/.vimrc`:
 
     Bundle 'GabrieleLippi/yarn-vim'
     $ vim +'PluginInstall! yarn-vim' +qall
 
-* **[vim-plug]**(https://github.com/junegunn/vim-plug), add the following to your plugin section:
+* **[vim-plug](https://github.com/junegunn/vim-plug)**, add the following to your plugin section:
 
     Plug 'GabrieleLippi/yarn-vim'
     $ vim +PlugInstall
