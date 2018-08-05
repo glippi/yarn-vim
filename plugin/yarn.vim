@@ -1,4 +1,4 @@
-" ya.vim: simple wrapper around yarn package manager
+" yarn-vim: simple wrapper around yarn package manager
 " Version: 0.1
 " Maintainer: Gabriele Lippi<gabriele@lippi.net>
 " Last modified: 05/08/2018
@@ -16,7 +16,9 @@ let s:global_cpo = &cpo
 " go into nocompatible-mode
 set cpo&vim 
 
-function s:getPackages(packages)
+" this function is responsible to retrieve the packages that user want to
+" add/upgrade/remove
+function s:get_packages(packages)
   if (len(a:packages) > 1)
     let w:packages = join(a:packages[0:], ' ')
   else
@@ -25,31 +27,21 @@ function s:getPackages(packages)
 endfunction
 
 function! Ya(...)
-  call s:getPackages(a:000[0:])
+  call s:get_packages(a:000[0:])
   let cmd = "yarn add " . w:packages
   execute "!" . cmd
 endfunction
 
 " add to devDependencies
 function! Yad(...)
-  let package = ''
-  if (len(a:000) > 1)
-    let package = join(a:000[0:], ' ')
-  else
-    let package = a:000[0]
-  endif
+  call s:get_packages(a:000[0:])
   let cmd = "yarn add --dev " . package
   execute "!" . cmd
 endfunction
 
 " add to peerDependencies
-function! Yad(...)
-  let package = ''
-  if (len(a:000) > 1)
-    let package = join(a:000[0:], ' ')
-  else
-    let package = a:000[0]
-  endif
+function! Yap(...)
+  call s:get_packages(a:000[0:])
   let cmd = "yarn add --peer " . package
   execute "!" . cmd
 endfunction
@@ -57,39 +49,29 @@ endfunction
 
 " add to optionalDependencies
 function! Yao(...)
-  let package = ''
-  if (len(a:000) > 1)
-    let package = join(a:000[0:], ' ')
-  else
-    let package = a:000[0]
-  endif
+  call s:get_packages(a:000[0:])
   let cmd = "yarn add --optional " . package
   execute "!" . cmd
 endfunction
 
 " upgrade a dependecy
 function! Yu(...)
-  let package = ''
-  if (len(a:000) > 1)
-    let package = join(a:000[0:], ' ')
-  else
-    let package = a:000[0]
-  endif
+  call s:get_packages(a:000[0:])
   let cmd = "yarn upgrade " . package
   execute "!" . cmd
 endfunction
 
 
 " remove a dependecy
-function! Yu(...)
-  let package = ''
-  if (len(a:000) > 1)
-    let package = join(a:000[0:], ' ')
-  else
-    let package = a:000[0]
-  endif
+function! Yr(...)
+  call s:get_packages(a:000[0:])
   let cmd = "yarn remove" . package
   execute "!" . cmd
 endfunction
 
 command! -nargs=* Ya :call Ya(<f-args>)
+command! -nargs=* Yu :call Yu(<f-args>)
+command! -nargs=* Yr :call Yr(<f-args>)
+command! -nargs=* Yad :call Yad(<f-args>)
+command! -nargs=* Yap :call Yap(<f-args>)
+command! -nargs=* Yao :call Yao(<f-args>)
