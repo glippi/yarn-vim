@@ -35,14 +35,14 @@ endfunction
 " add to devDependencies
 function! Yad(...)
   call s:get_packages(a:000[0:])
-  let cmd = "yarn add --dev " . package
+  let cmd = "yarn add --dev " . w:packages
   execute "!" . cmd
 endfunction
 
 " add to peerDependencies
 function! Yap(...)
   call s:get_packages(a:000[0:])
-  let cmd = "yarn add --peer " . package
+  let cmd = "yarn add --peer " . w:packages
   execute "!" . cmd
 endfunction
 
@@ -50,14 +50,14 @@ endfunction
 " add to optionalDependencies
 function! Yao(...)
   call s:get_packages(a:000[0:])
-  let cmd = "yarn add --optional " . package
+  let cmd = "yarn add --optional " . w:packages
   execute "!" . cmd
 endfunction
 
 " upgrade a dependecy
 function! Yu(...)
   call s:get_packages(a:000[0:])
-  let cmd = "yarn upgrade " . package
+  let cmd = "yarn upgrade " . w:packages
   execute "!" . cmd
 endfunction
 
@@ -65,7 +65,7 @@ endfunction
 " remove a dependecy
 function! Yr(...)
   call s:get_packages(a:000[0:])
-  let cmd = "yarn remove" . package
+  let cmd = "yarn remove" . w:packages
   execute "!" . cmd
 endfunction
 
