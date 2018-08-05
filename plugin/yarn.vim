@@ -65,7 +65,7 @@ endfunction
 " remove a dependecy
 function! Yr(...)
   call s:get_packages(a:000[0:])
-  let cmd = "yarn remove" . w:packages
+  let cmd = "yarn remove " . w:packages
   execute "!" . cmd
 endfunction
 
