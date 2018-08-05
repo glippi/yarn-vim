@@ -3,12 +3,12 @@ A simple utility, that wraps the main functionality of Yarn package manager.
 
 ## Features
 * Type less and get things done via _yarn_ core functions:
-  * every command start with a capital _y_ and is followed by only the first letter of the function you want to execute: less typing, more productivity.
+  * every command start with a capital ```_Y_``` and is followed by only the first letter of the function you want to execute: less typing, more productivity.
 * Mnemonic command's combo:
-  * if you want to *add* a package simply run _:Y**a** {package}_, if you want to remove something simply call _Y**r** {package}_, etc. it's simple: just _Y_ followed by the first letter of the command you want to execute
+  * if you want to *add* a package simply run ```_:Y**a** {package}_```, if you want to remove something simply call _Y**r** {package}_, etc. it's simple: just _Y_ followed by the first letter of the command you want to execute
 
 ## Installation
-* **[Vundle]**(https://github.com/gmarik/vundle), add the following line to your `~/.vimrc`:
+* [**Vundle**(]https://github.com/gmarik/vundle), add the following line to your `~/.vimrc`:
 
     Bundle 'GabrieleLippi/yarn-vim'
     $ vim +'PluginInstall! yarn-vim' +qall
