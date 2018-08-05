@@ -25,7 +25,7 @@ function s:getPackages(packages)
 endfunction
 
 function! Ya(...)
-  let cmd = "yarn add " . getPackageOrPackages(a:000[0:])
+  let cmd = "yarn add " . getPackages(a:000[0:])
   execute "!" . cmd
 endfunction
 
