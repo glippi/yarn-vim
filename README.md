@@ -2,10 +2,14 @@
 A simple utility that wraps the main functionality of [Yarn](https://yarnpkg.com/en/).
 
 ## Features
+* Mnemonic combination:
+  * every command start with a capital **Y** and it is followed only by the **first letter** of the function you want to execute
 * Type less and get things done via _yarn_ core functions:
-  * every command start with a capital **Y** and it is followed only by the **first letter** of the function you want to execute: less typing, more productivity.
-* Mnemonic command's combo:
-  * if you want to add a package simply run <pre>:Ya <i>package</i></pre>, if you want to remove something simply call <pre>Yr <i>package</i></pre>, wanna upgrade some dependencies? Well, go for <pre>Yu<i>package</i></pre> etc. it's simple: just ```Y``` followed by the first letter of the command you want to execute
+  * wanna add a package? Simply call: <pre>:Ya <i>package/packages</i></pre>
+  * wanna remove a package? Simply call: <pre>Yr <i>package/packages</i></pre>
+  * wanna upgrade a package? Well, call: <pre>Yu<i>package/packages</i></pre>
+
+it's simple: **less typing + less memory work + less errors = more joy** ;).
 
 ## Installation
 * [**Vundle**](https://github.com/gmarik/vundle), add the following line to your `~/.vimrc`:
@@ -34,3 +38,13 @@ If you are not using a package manager, download the [tarball](https://github.co
     $ cd ~/.vim
     $ tar --strip-components=1 --overwrite -zxf yarn-vim-master.tar.gz
     $ rm yarn-vim-master.tar.gz
+
+## Self-Promotion
+If you like this plugin, you are welcome to:
+* Star the repository on [GitHub](https://github.com/GabrieleLippi/yarn-vim)
+* Follow me on
+  * [Twitter](http://twitter.com/gabriele_lippi)
+  * [GitHub](https://github.com/GabrieleLippi)
+
+## License
+Distributed under the same terms as Vim itself. See `:help license`.
