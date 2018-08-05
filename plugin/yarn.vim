@@ -9,7 +9,7 @@ if exists("ya")
 endif
 let ya=1
 
-let packages = ""
+let w:packages = ""
 
 " store current compatible-mode in local variable
 let s:global_cpo = &cpo
@@ -17,15 +17,16 @@ let s:global_cpo = &cpo
 set cpo&vim 
 
 function s:getPackages(packages)
-  if (len(a:000) > 1)
-    let packages = join(a:000[0:], ' ')
+  if (len(a:packages) > 1)
+    let w:packages = join(a:packages[0:], ' ')
   else
-    let packages = a:000[0]
+    let w:packages = a:packages[0]
   endif
 endfunction
 
 function! Ya(...)
-  let cmd = "yarn add " . getPackages(a:000[0:])
+  call s:getPackages(a:000[0:])
+  let cmd = "yarn add " . w:packages
   execute "!" . cmd
 endfunction
 
@@ -90,7 +91,5 @@ function! Yu(...)
   let cmd = "yarn remove" . package
   execute "!" . cmd
 endfunction
-command! -nargs=* Ya :call Ya(<f-args>)
 
-" restore compatible-mod
-let &cpo = s:global_cpo
+command! -nargs=* Ya :call Ya(<f-args>)
