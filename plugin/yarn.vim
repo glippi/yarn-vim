@@ -62,10 +62,11 @@ function! Yu(...)
 endfunction
 
 
-" remove a dependecy
-function! Yr(...)
-  call s:get_packages(a:000[0:])
-  let cmd = "yarn remove " . w:packages
+" start yarn server in a new tab
+function! Ys(...)
+  let cmd = "yarn start "
+  tabnew "Yarn Server"
+  normal! ggdG
   execute "!" . cmd
 endfunction
 
@@ -75,3 +76,4 @@ command! -nargs=* Yr :call Yr(<f-args>)
 command! -nargs=* Yad :call Yad(<f-args>)
 command! -nargs=* Yap :call Yap(<f-args>)
 command! -nargs=* Yao :call Yao(<f-args>)
+command! -nargs=* Ys :call Ys(<f-args>)
